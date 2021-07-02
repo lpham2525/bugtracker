@@ -6,10 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <title>Dashboard</title>
 </head>
 <body>
+    <!-- Modal -->
+    <div class="w3-modal" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Modal title</h5>
+            <span onclick="document.getElementById('addModal').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end modal-->
+    </div>
   <div class="container">
     <h2>Welcome to the Dashboard!</h2>
     <div class="row">
@@ -27,7 +47,6 @@
 <table class="table table-primary table-striped table-hover">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,7 +83,8 @@
   </nav>
   <br>
   <p>
-  <button class="btn btn-info" type="button" id="createBtn">Create ticket</button>
+  <!-- <button class="btn btn-info" type="submit" id="addBtn" onclick="document.getElementById('addModal').style.display='block'">Create ticket</button> -->
+  <button onclick="document.getElementById('addModal').style.display='block'" class="w3-button w3-black" id="addBtn">Create ticket</button>
   </p>
   <thead>
     <tr class="table-dark">
@@ -102,8 +122,10 @@
       </div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://use.fontawesome.com/d25efb4efd.js"></script>
+<script src="../js/dashboard.js"></script>
 </body>
 </html>
