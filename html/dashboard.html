@@ -20,7 +20,17 @@
               class="w3-button w3-display-topright">&times;</span>
           </div>
           <div class="modal-body">
-            ...
+            <p>Ticket Name</p>
+            <input class="form-control" type="text" aria-label="Ticket Name">
+            <p>Project Name</p>
+            <input class="form-control" type="text" aria-label="Project Name">
+            <br>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Priority</button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Low</a></li>
+              <li><a class="dropdown-item" href="#">Medium</a></li>
+              <li><a class="dropdown-item" href="#">High</a></li>
+            </ul>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary">Save changes</button>
@@ -82,7 +92,6 @@
   </nav>
   <br>
   <p>
-  <!-- <button class="btn btn-info" type="submit" id="addBtn" onclick="document.getElementById('addModal').style.display='block'">Create ticket</button> -->
   <button onclick="document.getElementById('addModal').style.display='block'" class="w3-button w3-black" id="addBtn">Create ticket</button>
   </p>
   <thead>
