@@ -8,8 +8,9 @@ document.getElementById('addBtn').addEventListener('click', () => {
 const getUser = () => {
   axios.get(`/api/users/${localStorage.getItem('user')}`)
     .then(({ data }) => {
-      document.getElementById('user').innerHTML = `
-    <p>${data.name}</p>
+      document.getElementById('username').innerHTML = `
+    <p>${data.name}</p> `
+      document.getElementById('userRole').innerHTML = `
     <p>${data.role}</p>`
 
       data.tickets.forEach(ticket => {
