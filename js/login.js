@@ -2,7 +2,7 @@ document.getElementById('register').addEventListener('click', event => {
   event.preventDefault()
 
   axios.post('/api/users', {
-    name: document.getElementById('name').value,
+    name: document.getElementById('registerName').value,
     role: document.getElementById('role').value
   })
     .then(({ data }) => {
@@ -18,7 +18,7 @@ document.getElementById('login').addEventListener('click', event => {
   console.log(event)
   event.preventDefault()
 
-  axios.get(`/api/login/${document.getElementById('lname').value}`)
+  axios.get(`/api/login/${document.getElementById('loginName').value}`)
     .then(({ data }) => {
       console.log(data)
       localStorage.setItem('user', data.id)
