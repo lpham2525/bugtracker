@@ -33,7 +33,22 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="registerPassword">
           </div>
-          <button type="submit" class="btn btn-primary" id="registerSubmit">Register!</button>
+          <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">Role</label>
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="1">Admin</option>
+                <option value="2">Project Manager</option>
+                <option value="3">Dev</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary" id="registerSubmit">Register!</button>
+          </div>
+          </div>
         </form>
         <div id="registerAlert"></div>
       </div>

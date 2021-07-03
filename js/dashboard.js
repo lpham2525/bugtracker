@@ -8,14 +8,20 @@ document.getElementById('addBtn').addEventListener('click', () => {
 const getUser = () => {
   axios.get(`/api/users/${localStorage.getItem('user')}`)
     .then(({ data }) => {
-      document.getElementById('username').innerHTML = `
+      document.getElementById('userName').innerHTML = `
     <p>${data.name}</p> `
       document.getElementById('userRole').innerHTML = `
     <p>${data.role}</p>`
 
       data.tickets.forEach(ticket => {
-        let ticketElem = document.createElement('li')
-        ticketElem.textContent = `Name: ${ticket.name} | Project: ${ticket.project} | Priority: ${ticket.priority}`
+        let ticketElem = document.createElement('tr')
+        ticketElem.innerHTML = `
+        <th scope="row">${ticket.id}</th>
+        <td>${ticket.name}</td>
+        <td>${ticket.project}</td>
+        <td>${ticket.priority}</td>
+        <td>Open</td>
+        <td><a href="#">Edit</a></td>`
         document.getElementById('tickets').append(ticketElem)
       })
     })
