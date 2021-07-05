@@ -22,7 +22,7 @@ router.get('/users/:id', (req, res) => {
     .catch(err => console.error(err))
 })
 
-// PUT one user
+// UPDATE one user
 router.put('/users/:id', (req, res) => {
   User.update(req.body, { where: { id: req.params.id } })
     .then(user => res.json(user))

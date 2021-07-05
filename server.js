@@ -1,17 +1,29 @@
 require('dotenv').config()
 const express = require('express')
 const { join } = require('path')
-
 const app = express()
+
+
+app.engine('.hbs', require('express-handlebars')({ extname: '.hbs' }))
+app.set('view engine', '.hbs')
+
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + '/public/html/index.html')
+// })
+
+// app.get('/dashboard', (req, res) => {
+//   res.sendFile(__dirname + '/public/html/dashboard.html')
+// })
 
 app.use(express.static(join(__dirname, 'public')))
 app.use('/assets', express.static(join(__dirname, 'assets')))
-app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.use(require('./routes'))
 
 require('./db')
   .sync()
-  .then(() => app.listen(process.env.PORT || 3000, () => console.log('listening on port ' + port)))
+  // .then(() => app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000')))
+  .then(() => app.listen(3000, () => console.log('http://localhost:3000')))
   .catch((err) => console.error(err))

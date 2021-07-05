@@ -2,7 +2,7 @@ const router = require('express').Router()
 const { Ticket } = require('../models')
 
 // GET all tickets
-router.get('/tickets/', (req, res) => {
+router.get('/tickets', (req, res) => {
   Ticket.findAll()
     .then(tickets => res.json(tickets))
     .catch(err => console.error(err))
@@ -16,7 +16,7 @@ router.get('/tickets/:id', (req, res) => {
 })
 
 // POST one ticket
-router.post('/tickets/', (req, res) => {
+router.post('/tickets', (req, res) => {
   Ticket.create(req.body)
     .then(ticket => res.json(ticket))
     .catch(err => console.error(err))
