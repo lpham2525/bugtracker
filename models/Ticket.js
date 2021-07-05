@@ -4,11 +4,11 @@ const sequelize = require('../db')
 class Ticket extends Model { }
 
 Ticket.init({
-  title: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  description: {
+  project: {
     type: DataTypes.TEXT,
     allowNull: true
   },

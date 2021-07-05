@@ -3,7 +3,6 @@ const express = require('express')
 const { join } = require('path')
 const app = express()
 
-
 app.engine('.hbs', require('express-handlebars')({ extname: '.hbs' }))
 app.set('view engine', '.hbs')
 
@@ -27,3 +26,4 @@ require('./db')
   // .then(() => app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000')))
   .then(() => app.listen(3000, () => console.log('http://localhost:3000')))
   .catch((err) => console.error(err))
+  

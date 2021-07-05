@@ -9,20 +9,20 @@
       </div>
       <div class="modal-body">
         <p>Ticket Name</p>
-        <input class="form-control" type="text" aria-label="Ticket Name">
+        <input class="form-control" type="text" aria-label="Ticket Name" id="ticketName">
         <p>Project Name</p>
-        <input class="form-control" type="text" aria-label="Project Name">
+        <input class="form-control" type="text" aria-label="Project Name" id="projectName">
         <br>
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
           aria-expanded="false">Priority</button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Low</a></li>
-          <li><a class="dropdown-item" href="#">Medium</a></li>
-          <li><a class="dropdown-item" href="#">High</a></li>
-        </ul>
+        <select id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" id="addTicket">Save changes</button>
       </div>
     </div>
   </div>
@@ -32,8 +32,8 @@
   <h2>Welcome to the Dashboard!</h2>
   <div class="row">
     <div class="col-2">
-      <p id="userName">Name</p>
-      <p id="userRole">Role</p>
+      <p id="userName"></p>
+      <p id="userRole"></p>
       <p>
         <a href="#">Tickets</a>
       </p>
@@ -90,34 +90,34 @@
             <th scope="col">ID</th>
             <th scope="col">Ticket Name</th>
             <th scope="col">Project Name</th>
-            <th scope="col">Status</th>
             <th scope="col">Priority</th>
+            <th scope="col">Status</th>
             <th scope="col">More</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tickets">
           <tr>
             <th scope="row">1</th>
             <td>Link broken</td>
             <td>Plant's Best Friend</td>
-            <td>Open</td>
             <td>Medium</td>
+            <td>Open</td>           
             <td><a href="#">Edit</a></td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Unable to log in</td>
             <td>One for the Road</td>
-            <td>Closed</td>
             <td>High</td>
+            <td>Closed</td>           
             <td><a href="#">Edit</a></td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Page load delayed</td>
             <td>You Must Be Trippin'</td>
-            <td>Pending</td>
             <td>Low</td>
+            <td>Pending</td>           
             <td><a href="#">Edit</a></td>
           </tr>
         </tbody>
