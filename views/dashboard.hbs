@@ -95,7 +95,7 @@
             <th scope="col">More</th>
           </tr>
         </thead>
-        <tbody id="tickets">
+        <tr id="tickets">
           {{#each user.tickets}}
           {{!-- <tr>
             <th scope="row">1</th>
@@ -121,12 +121,14 @@
             <td>Pending</td>           
             <td><a href="#">Edit</a></td>
           </tr> --}}
-          <th scope="row">{{this.dataValues.id}}</th>
-          <td>{{this.dataValues.name}}</td>
-          <td>{{this.dataValues.project}}</td>
-          <td>{{this.dataValues.priority}}</td>
-          <td>Open</td>
-          <td><a href="#">Edit</a></td>
+          <tr>
+            <th scope="row">{{this.dataValues.id}}</th>
+            <td>{{this.dataValues.name}}</td>
+            <td>{{this.dataValues.project}}</td>
+            <td>{{this.dataValues.priority}}</td>
+            <td>Open</td>
+            <td><a href="#">Edit</a></td>
+          </tr>
           {{/each}}
         </tbody>
       </table>

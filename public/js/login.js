@@ -1,9 +1,10 @@
 document.getElementById('register').addEventListener('click', event => {
   event.preventDefault()
 
+  let role = document.getElementById('role')
   axios.post('/api/users', {
     name: document.getElementById('registerName').value,
-    role: document.getElementById('role').value
+    role: role.options[role.selectedIndex].text
   })
     .then(({ data }) => {
       console.log(data)
