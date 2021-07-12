@@ -37,11 +37,9 @@ router.delete('/users/:id', (req, res) => {
 })
 
 // Log in user
-router.get('/login/:username', (req, res) => {
-  User.findOne({ where: { username: req.params.username } })
-    .then(user => {
-      res.json(user)
-    })
+router.get('/login/:name', (req, res) => {
+  User.findOne({ where: { name: req.params.name } })
+    .then(user => res.json(user))  
     .catch(err => console.error(err))
 })
 
