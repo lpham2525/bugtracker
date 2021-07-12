@@ -6,14 +6,6 @@ const app = express()
 app.engine('.hbs', require('express-handlebars')({ extname: '.hbs' }))
 app.set('view engine', '.hbs')
 
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/public/html/index.html')
-// })
-
-// app.get('/dashboard', (req, res) => {
-//   res.sendFile(__dirname + '/public/html/dashboard.html')
-// })
-
 app.use(express.static(join(__dirname, 'public')))
 app.use('/assets', express.static(join(__dirname, 'assets')))
 app.use(express.urlencoded({ extended: true }))

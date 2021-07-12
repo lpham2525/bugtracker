@@ -9,6 +9,7 @@ const getUser = () => {
   axios.get(`/api/users/${localStorage.getItem('user')}`)
     .then(({ data }) => {
       console.log(data)
+      console.log('testing console log for getUser')
       document.getElementById('userName').innerHTML = `
     <p>${data.name}</p> `
       document.getElementById('userRole').innerHTML = `
@@ -22,7 +23,8 @@ const getUser = () => {
         <td>${ticket.project}</td>
         <td>${ticket.priority}</td>
         <td>Open</td>
-        <td><a href="#">Edit</a></td>`
+        <td><a href="#">Edit</a></td>
+        </tr>`
         document.getElementById('tickets').append(ticketElem)
       })
     })
@@ -33,7 +35,6 @@ document.getElementById('addTicket').addEventListener('click', event => {
   event.preventDefault()
 
   axios.post('/api/tickets', {
-
     name: document.getElementById('ticketName').value,
     project: document.getElementById('projectName').value,
     priority: document.getElementById('priority').value,
@@ -48,7 +49,8 @@ document.getElementById('addTicket').addEventListener('click', event => {
         <td>${document.getElementById('projectName').value}</td>
         <td>${document.getElementById('priority').value}</td>
         <td>Open</td>
-        <td><a href="#">Edit</a></td>`
+        <td><a href="#">Edit</a></td>
+        </tr>`
       document.getElementById('tickets').append(ticketElem)
       document.getElementById('ticketName').value = ''
       document.getElementById('projectName').value = ''

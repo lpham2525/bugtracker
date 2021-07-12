@@ -32,8 +32,8 @@
   <h2>Welcome to the Dashboard!</h2>
   <div class="row">
     <div class="col-2">
-      <p id="userName"></p>
-      <p id="userRole"></p>
+      <p id="userName">{{user.name}}</p>
+      <p id="userRole">{{user.role}}</p>
       <p>
         <a href="#">Tickets</a>
       </p>
@@ -96,7 +96,8 @@
           </tr>
         </thead>
         <tbody id="tickets">
-          <tr>
+          {{#each user.tickets}}
+          {{!-- <tr>
             <th scope="row">1</th>
             <td>Link broken</td>
             <td>Plant's Best Friend</td>
@@ -119,7 +120,14 @@
             <td>Low</td>
             <td>Pending</td>           
             <td><a href="#">Edit</a></td>
-          </tr>
+          </tr> --}}
+          <th scope="row">{{this.dataValues.id}}</th>
+          <td>{{this.dataValues.name}}</td>
+          <td>{{this.dataValues.project}}</td>
+          <td>{{this.dataValues.priority}}</td>
+          <td>Open</td>
+          <td><a href="#">Edit</a></td>
+          {{/each}}
         </tbody>
       </table>
     </div>
